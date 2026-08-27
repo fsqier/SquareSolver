@@ -2,10 +2,14 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <assert.h>
 
 
 //возвращает количество решений
 int SquareSolver(double a, double b, double c, double* x1, double* x2) {
+    assert(x1 != NULL);
+    assert(x2 != NULL);
+    assert(x1 != x2);
 
     if (IsZero(a)) {
         return LineEq(b, c, x1);
