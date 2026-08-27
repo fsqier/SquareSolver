@@ -38,7 +38,9 @@ void CntTest (double a, double b, double c, int CntRoot,
     *cnt_correct_test += CorrectTest(a, b, c, CntRoot, x1, x2);
 }
 
+//создает объект типа TestValRef
 int CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2) {
+
     TestValRef test = {
         .a = a,
         .b = b,
@@ -62,9 +64,9 @@ int RunOneTest(TestValRef test) {
         return true;
     }
 
-    printf("\033[31mTest FALLED\033[0m: a = %lg, b = %lg, c = %lg\n"
+    printf("\033[31mTest FALLED: a = %lg, b = %lg, c = %lg\n"
             "Expected: %d roots x1ref = %lg, x2ref = %lg\n"
-            "Get:      %d roots x1    = %lg, x2    = %lg\n",
+            "Get:      %d roots x1    = %lg, x2    = %lg\n\033[0m",
             test.a, test.b, test.c, test.CntRoots, test.x1, test.x2, CntRoots, x1, x2);
     return false;
 }
@@ -88,7 +90,7 @@ int CorrectAns(TestValRef test, int CntRoots, double x1, double x2) {
         }
     }
 
-    if ((CntRoots == INF_ROOTS || CntRoots == NO_ROOTS) && isnan(x2) && isnan(x1)) {
+    if ((CntRoots == INF_ROOTS || CntRoots == NO_ROOTS) && isnan(x2) &&  isnan(x1)) {
         return true;
     }
 

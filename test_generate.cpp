@@ -8,6 +8,7 @@ double RandDouble         ();
 void   GenerateTest       ();
 void   GeneratePopularTest(FILE* fp);
 void   GenerateSpecialTest(FILE* fp);
+void   PrintInFile        (FILE* fp);
 
 int main() {
 
@@ -16,9 +17,7 @@ int main() {
     return 0;
 }
 
-/*! Запись в файл тестов в формате:
-a b c количество_корней корень1 корень2
-*/
+
 void GenerateTest() {
 
     FILE* fp = fopen("tests.txt", "w");
@@ -33,9 +32,7 @@ void GenerateTest() {
     fclose(fp);
 }
 
-/*!Генерация общих случаев
-Генерируются корни и коэфициент a. По ним высчитываются b и c
-*/
+
 void GeneratePopularTest(FILE* fp) {
 
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
@@ -51,8 +48,7 @@ void GeneratePopularTest(FILE* fp) {
     }
 }
 
-/*!Генерация частных случаев
-*/
+
 void GenerateSpecialTest(FILE* fp) {
 
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
@@ -89,7 +85,7 @@ void GenerateSpecialTest(FILE* fp) {
     fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, b, 0.0, 2, 0.0, -b/a);
 }
 
-//!Генерация случайного числа типа double
+
 double RandDouble () {
 
     const double min_coef = -10.0, len_range = 20.0;

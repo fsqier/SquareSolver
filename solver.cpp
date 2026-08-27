@@ -7,6 +7,7 @@
 
 //возвращает количество решений
 int SquareSolver(double a, double b, double c, double* x1, double* x2) {
+
     assert(x1 != NULL);
     assert(x2 != NULL);
     assert(x1 != x2);
