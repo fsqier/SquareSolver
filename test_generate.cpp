@@ -1,3 +1,10 @@
+/*!
+\file
+\brief Файл для генерации тестов.
+Генерирует частные случаи(один из коэффициентов 0) и общие.
+Запускается отдельно от основной программы.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -9,9 +16,6 @@ void   GenerateTest       ();
 void   GeneratePopularTest(FILE* fp);
 void   GenerateSpecialTest(FILE* fp);
 
-#define MIN_COEF -1000
-#define LEN_RANGE 2000
-
 int main() {
 
     GenerateTest();
@@ -19,6 +23,9 @@ int main() {
     return 0;
 }
 
+/*! Запись в файл тестов в формате:
+a b c количество_корней корень1 корень2
+*/
 void GenerateTest() {
 
     FILE* fp = fopen("tests.txt", "w");
@@ -32,6 +39,9 @@ void GenerateTest() {
     fclose(fp);
 }
 
+/*!Генерация общих случаев
+Генерируются корни и коэфициент a. По ним высчитываются b и c
+*/
 void GeneratePopularTest(FILE* fp) {
 
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
@@ -47,6 +57,8 @@ void GeneratePopularTest(FILE* fp) {
     }
 }
 
+/*!Генерация частных случаев
+*/
 void GenerateSpecialTest(FILE* fp) {
 
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
@@ -83,7 +95,9 @@ void GenerateSpecialTest(FILE* fp) {
     fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, b, 0.0, 2, 0.0, -b/a);
 }
 
-//рандомный double
+//!Генерация случайного числа типа double
 double RandDouble () {
-    return (double)rand() / RAND_MAX * LEN_RANGE - MIN_COEF;
+
+    const double min_coef = -1000.0, len_range = 2000.0;
+    return (double)rand() / RAND_MAX * len_range - min_coef;
 }

@@ -4,14 +4,14 @@
 #include <string.h>
 #include <stdbool.h>
 
-//вывод решений
+//РІС‹РІРѕРґ СЂРµС€РµРЅРёР№
  void OutputSolves(int CntRoots, double x1, double x2) {
 
-    printf("Количество корней: ");
+    printf("РљРѕР»РёС‡РµСЃС‚РІРѕ РєРѕСЂРЅРµР№: ");
 
     switch(CntRoots) {
         case INF_ROOTS:
-            printf("Бесконечно много\n");
+            printf("Р‘РµСЃРєРѕРЅРµС‡РЅРѕ РјРЅРѕРіРѕ\n");
             break;
         case NO_ROOTS:
             printf("0\n");
@@ -23,19 +23,19 @@
             printf("2\nx1: %lg, x2: %lg\n", x1, x2);
             break;
         default:
-            printf("Корней почему-то больше двух и меньше INF\n");
+            printf("РљРѕСЂРЅРµР№ РїРѕС‡РµРјСѓ-С‚Рѕ Р±РѕР»СЊС€Рµ РґРІСѓС… Рё РјРµРЅСЊС€Рµ INF\n");
             break;
     }
  }
 
-//проверяет, нужно ли решить ещё уравнение
+//РїСЂРѕРІРµСЂСЏРµС‚, РЅСѓР¶РЅРѕ Р»Рё СЂРµС€РёС‚СЊ РµС‰С‘ СѓСЂР°РІРЅРµРЅРёРµ
 int NeedContinue() {
 
-    printf("Продолжить?(yes/no) ");
+    printf("РџСЂРѕРґРѕР»Р¶РёС‚СЊ?(yes/no) ");
     return YesOrNo();
 }
 
-//проверяет, ввод кодового слова
+//РїСЂРѕРІРµСЂСЏРµС‚, РІРІРѕРґ РєРѕРґРѕРІРѕРіРѕ СЃР»РѕРІР°
  int CheckInput(char* CodeWord, int WrongSymb) {
 
     if ((!strcmp(CodeWord, YES) || !strcmp(CodeWord, NO)) && !WrongSymb) {
@@ -45,10 +45,10 @@ int NeedContinue() {
     return false;
  }
 
-//ввод коэффициентов и проверка корректности
+//РІРІРѕРґ РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ Рё РїСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё
 int InputCoef(double* a, double* b, double* c) {
 
-    printf("Введите коэффициенты:");
+    printf("Р’РІРµРґРёС‚Рµ РєРѕСЌС„С„РёС†РёРµРЅС‚С‹:");
     int correct_coefs = scanf("%lg %lg %lg", a, b, c);
     int cnt_wrong_symb = ClearBuf();
 
@@ -61,8 +61,8 @@ int InputCoef(double* a, double* b, double* c) {
     return true;
 }
 
-//чистка буффера ввода и подсчёт лишних символов
-//дает знать, есть ли лишние символы
+//С‡РёСЃС‚РєР° Р±СѓС„С„РµСЂР° РІРІРѕРґР° Рё РїРѕРґСЃС‡С‘С‚ Р»РёС€РЅРёС… СЃРёРјРІРѕР»РѕРІ
+//РґР°РµС‚ Р·РЅР°С‚СЊ, РµСЃС‚СЊ Р»Рё Р»РёС€РЅРёРµ СЃРёРјРІРѕР»С‹
 int ClearBuf() {
 
     int cnt_wrong_symb = 0;
@@ -79,11 +79,11 @@ int ClearBuf() {
 
 int NeedTest() {
 
-    printf("Нужно тестирование?(yes/no) ");
+    printf("РќСѓР¶РЅРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ?(yes/no) ");
     return YesOrNo();
 }
 
-//ввели yes или no
+//РІРІРµР»Рё yes РёР»Рё no
 int YesOrNo() {
 
     char CodeWord[code_word_len];
