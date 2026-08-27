@@ -9,6 +9,8 @@ void   GenerateTest       ();
 void   GeneratePopularTest(FILE* fp);
 void   GenerateSpecialTest(FILE* fp);
 void   PrintInFile        (FILE* fp);
+void   PrintInFile        (FILE* fp, double a, double b, double c,
+                                int CntRoots, double x1, double x2)
 
 int main() {
 
@@ -16,7 +18,6 @@ int main() {
 
     return 0;
 }
-
 
 void GenerateTest() {
 
@@ -44,45 +45,50 @@ void GeneratePopularTest(FILE* fp) {
         a = RandDouble();
         b = (x1 + x2) * (-a);
         c = (x1 * x2) * a; //по теореме виета
-        fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, b, c, 2, x1, x2);
+        PrintInFile(fp, a, b, c, 2, x1, x2);
     }
 }
-
 
 void GenerateSpecialTest(FILE* fp) {
 
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
 
     //все коэф нули
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", 0.0, 0.0, 0.0, -1, 0.0, 0.0);
+    PrintInFile(fp, 0.0, 0.0, 0.0, -1, 0.0, 0.0);
 
     //c != 0, a == 0, b == 0
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", 0.0, 0.0, RandDouble(), 0, 0.0, 0.0);
+    PrintInFile(fp, 0.0, 0.0, RandDouble(), 0, 0.0, 0.0);
 
     //b != 0, c == 0, a == 0
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", 0.0, RandDouble(), 0.0, 1, 0.0, 0.0);
+    PrintInFile(fp, 0.0, RandDouble(), 0.0, 1, 0.0, 0.0);
 
     //a == 0, c != 0, b != 0
     c = RandDouble();
     b = RandDouble();
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", 0.0, b, c, 1, -c/b, 0.0);
+    PrintInFile(fp, 0.0, b, c, 1, -c/b, 0.0);
 
     //a != 0, c == 0, b == 0
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", RandDouble(), 0.0, 0.0, 1, 0.0, 0.0);
+    PrintInFile(fp, RandDouble(), 0.0, 0.0, 1, 0.0, 0.0);
 
     //b == 0, c != 0, a != 0
     a = RandDouble();
     c = RandDouble();
     if (a * c <= 0) {
-        fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, 0.0, c, 1, sqrt(-c/a), 0.0);
+        PrintInFile(fp, a, 0.0, c, 1, sqrt(-c/a), 0.0);
     } else {
-        fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, 0.0, c, 0, 0.0, 0.0);
+        PrintInFile(fp, a, 0.0, c, 0, 0.0, 0.0);
     }
 
     //c == 0, a != 0, b != 0
     a = RandDouble();
     b = RandDouble();
-    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, b, 0.0, 2, 0.0, -b/a);
+    PrintInFile(fp, a, b, 0.0, 2, 0.0, -b/a);
+}
+
+
+void PrintInFile (FILE* fp, double a, double b, double c, int CntRoots, double x1, double x2) {
+
+    fprintf(fp, "%lg %lg %lg %d %lg %lg\n", a, b, c, CntRoots, x1, x2);
 }
 
 
