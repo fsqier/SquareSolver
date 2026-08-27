@@ -8,31 +8,22 @@
 
 int main() {
 
-    //Txlib
+    if (NeedTest()) {
+        RunAllTests();
+    }
 
-    txCreateWindow (800, 600);
-    txSetColor (TX_YELLOW, 7);
-    txSetFillColor (TX_NULL);
+    while (NeedContinue()) {
 
+        double a = 0, b = 0, c = 0;
+        while (!InputCoef(&a, &b, &c)) {
+            printf("Пожалуйста, давай еще раз:(\n");
+        }
 
-    //
+        double x1 = NAN, x2 = NAN;
+        int CntRoots = SquareSolver(a, b, c, &x1, &x2);
 
-//     if (NeedTest()) {
-//         RunAllTests();
-//     }
-//
-//     while (NeedContinue()) {
-//
-//         double a = 0, b = 0, c = 0;
-//         while (!InputCoef(&a, &b, &c)) {
-//             printf("Пожалуйста, давай еще раз:(\n");
-//         }
-//
-//         double x1 = NAN, x2 = NAN;
-//         int CntRoots = SquareSolver(a, b, c, &x1, &x2);
-//
-//         OutputSolves(CntRoots, x1, x2);
-//     }
+        OutputSolves(CntRoots, x1, x2);
+    }
 
     return 0;
 }
