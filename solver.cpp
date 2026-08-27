@@ -63,6 +63,8 @@ int SquareEq(double a, double b, double c, double* x1, double *x2) {
  //сравнение double с 0
  int IsZero(double num) {
 
+    const double eps = 1e-2;
+
     if (num < eps && num > -eps) {
         return true;
     }

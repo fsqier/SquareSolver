@@ -1,0 +1,117 @@
+/*!
+\file in_out.h
+\brief Заголовочный файл отвечающий за вывод и правильный ввод
+*/
+
+/*!
+\fn void OutputSolves(int CntRoots, double x1, double x2);
+Выводит количество решений и корни(по необходимости)
+*/
+
+/*!
+\fn int NeedContinue();
+Спрашивает у пользователя, нужно ли ему еще раз решить квадратку
+*/
+
+/*!
+\fn int CheckInput  (char* CodeWord, int CntWrongSymb);
+Проверяет ввод кодового слова для продолжения работы с программой
+*/
+
+/*!
+\fn int InputCoef (double* a, double* b, double* c);
+Проверяет ввод коэффициентов
+*/
+
+/*!
+\fn int ClearBuf ();
+Очищает буффер ввода
+\return Количество "мусорных" символов, оставшихся в буффере
+*/
+
+/*!
+\fn int NeedTest ();
+Спрашивает у пользователя, нужно ли провести тестирование программы
+*/
+
+/*!
+\fn int YesOrNo ();
+Определяет, введено ли слово yes(программа продолжит выполнение) или no
+*/
+
+/*!
+\file solver.h
+\brief Заголовочный файл с решением квадратки
+
+*/
+
+/*!
+\fn int SquareSolver(double a, double b, double c, double* x1, double* x2);
+Решает квадратное уравнение любого вида
+\return Количество корней
+*/
+
+/*!
+\fn int SquareEq(double a, double b, double c, double* x1, double* x2);
+Решает уравнение, где a != 0
+*/
+
+/*!
+\fn int LineEq (double b, double c, double* x1);
+Решает уравнение, где a == 0
+*/
+
+/*!
+\fn int IsZero(double num);
+Сравнивает число типа double с нулем
+*/
+
+/*!
+\enum cnt_roots_t
+Набор возможных значений переменной, указывающей на количество корней
+*/
+
+/*!
+\macro DISCR(a, b, c)
+Макрос для вычисления дискриминанта
+*/
+
+/*!
+\file test_program.h
+\brief Заголовочный файл отвечающий за тестирование программы
+
+*/
+
+/*!
+\class TestValRef
+Cтруктура для тестирования программы.
+Хранит референсные значения квадратного уравнения
+*/
+
+/*!
+\fn void   RunAllTests ();
+Тестирует решение квадратного уравнения.
+Тесты берет из файла test.txt
+*/
+
+/*!
+\fn void CntTest (double a, double b, double c, int CntRoot, double x1, double x2, int* cnt_all_test, int* cnt_correct_test);
+Считает пройденное количество тестов
+\param cnt_all_test  Общее количество тестов
+\param cnt_correct_test Количество успешно пройденных тестов
+*/
+
+/*!
+\fn int    CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2);
+Создает тест и вызывает RunOneTest(...)
+*/
+
+/*!
+\fn int    RunOneTest  (TestValRef test);
+Решает квадратку по коэффициентам, выводит результаты теста
+*/
+
+/*!
+\fn int    CorrectAns  (TestValRef test, int CntRoots, double x1, double x2);
+Сравнивает получившиеся значения с референсными
+*/

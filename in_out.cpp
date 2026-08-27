@@ -86,6 +86,8 @@ int NeedTest() {
 //ввели yes или no
 int YesOrNo() {
 
+    const int code_word_len = 4;
+
     char CodeWord[code_word_len];
     scanf("%3s", CodeWord);
 
