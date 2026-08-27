@@ -122,7 +122,7 @@ ALLOW_UNICODE_NAMES    = NO
 # Spanish, Swedish, Turkish, UkrainianиVietnamese.
 # Значение по умолчанию: English.
 
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Russian
 
 # Если тег BRIEF_MEMBER_DESC установлен в YES, Doxygen включит краткие описания
 # членов после членов, перечисленных в документации файла и класса (аналогично
@@ -1057,7 +1057,7 @@ WARN_LOGFILE           =
 # Примечание: Если этот тег оставлен пустым, будет выполнен поиск в текущем
 # каталоге.
 
-INPUT                  = D:/MIPT/C/summer/sqsolvdoc/html
+INPUT                  =
 
 # Тег INPUT_ENCODING задаёт кодировку символов, используемую во входных файлах,
 # которую Doxygen использует для внутреннего хранения. По умолчанию используется
