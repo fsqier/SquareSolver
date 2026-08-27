@@ -1,8 +1,10 @@
+#include <TXlib.h>
 #include "test_program.h"
 #include "solver.h"
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <assert.h>
 
 //тестирование программки
 void RunAllTests() {
@@ -12,6 +14,7 @@ void RunAllTests() {
     int CntRoots = 0;
 
     FILE* fp = fopen("tests.txt", "r");
+    assert(fp != NULL);
 
     while ((fscanf(fp, "%lg %lg %lg %d %lg %lg", &a, &b, &c, &CntRoots, &x1, &x2)) != EOF) {
         if (CntRoots == NO_ROOTS or CntRoots == INF_ROOTS) {

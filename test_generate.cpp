@@ -1,10 +1,3 @@
-/*!
-\file
-@brief Файл для генерации тестов.
-Генерирует частные случаи(один из коэффициентов 0) и общие.
-Запускается отдельно от основной программы.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -29,6 +22,7 @@ a b c количество_корней корень1 корень2
 void GenerateTest() {
 
     FILE* fp = fopen("tests.txt", "w");
+    assert(fp != NULL);
 
     srand(time(NULL));
 
@@ -98,6 +92,10 @@ void GenerateSpecialTest(FILE* fp) {
 //!Генерация случайного числа типа double
 double RandDouble () {
 
-    const double min_coef = -1000.0, len_range = 2000.0;
-    return (double)rand() / RAND_MAX * len_range - min_coef;
+    const double min_coef = -10.0, len_range = 20.0;
+
+    double num = (double)rand() / RAND_MAX * len_range + min_coef;
+    assert(isfinite(num));
+
+    return num;
 }

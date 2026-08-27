@@ -14,7 +14,6 @@ int    SquareEq    (double a, double b, double c, double* x1, double* x2);
 int    LineEq      (double b, double c, double* x1);
 int    IsZero      (double num);
 
-
 #define DISCR(a, b, c) ((b) * (b) - 4 * (a)*(c))
 
 #endif

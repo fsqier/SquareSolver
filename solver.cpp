@@ -10,6 +10,9 @@ int SquareSolver(double a, double b, double c, double* x1, double* x2) {
     assert(x1 != NULL);
     assert(x2 != NULL);
     assert(x1 != x2);
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
 
     if (IsZero(a)) {
         return LineEq(b, c, x1);

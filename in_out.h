@@ -1,7 +1,6 @@
 #ifndef IN_OUT_H
 #define IN_OUT_H
 
-
 void   OutputSolves(int CntRoots, double x1, double x2);
 int    NeedContinue();
 int    CheckInput  (char* CodeWord, int CntWrongSymb);

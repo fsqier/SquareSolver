@@ -15,7 +15,4 @@ int    CorrectTest (double a, double b, double c, int CntRoot, double x1, double
 int    RunOneTest  (TestValRef test);
 int    CorrectAns  (TestValRef test, int CntRoots, double x1, double x2);
 
-#define MAX(x, y) ((x) > (y) ? (x) : (y))
-#define MIN(x, y) ((x) < (y) ? (x) : (y))
-
 #endif
