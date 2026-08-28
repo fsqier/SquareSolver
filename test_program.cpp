@@ -9,7 +9,7 @@
 
 void RunAllTests() {
 
-    int cnt_correct_test = 0,  cnt_all_test = 0;
+    int CntCorrectTest = 0,  CntAllTest = 0;
     double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
     int CntRoots = 0;
 
@@ -23,12 +23,12 @@ void RunAllTests() {
         } else if (CntRoots == ONE_ROOT) {
             x2 = NAN;
         }
-        CntTest(a, b, c, CntRoots, x1, x2, &cnt_all_test, &cnt_correct_test);
+        CntTest(a, b, c, CntRoots, x1, x2, &CntAllTest, &CntCorrectTest);
     }
 
     fclose(fp);
 
-    printf("Пройдено %d/%d\n", cnt_correct_test, cnt_all_test);
+    printf("Пройдено %d/%d\n", CntCorrectTest, CntAllTest);
 }
 
 void CntTest (double a, double b, double c, int CntRoot,
@@ -83,9 +83,9 @@ int CorrectAns(TestValRef test, int CntRoots, double x1, double x2) {
     }
 
     if (CntRoots == TWO_ROOTS) {
-        double max_ref_root = MAX(test.x1, test.x2), max_get_root = MAX(x1, x2);
-        double min_ref_root = MIN(test.x1, test.x2), min_get_root = MIN(x1, x2);
-        if (IsZero(max_ref_root - max_get_root) && IsZero(min_ref_root - min_get_root)) {
+        double MaxRefRoot = MAX(test.x1, test.x2), MaxGetRoot = MAX(x1, x2);
+        double MinRefRoot = MIN(test.x1, test.x2), MinGetRoot = MIN(x1, x2);
+        if (IsZero(MaxRefRoot - MaxGetRoot) && IsZero(MinRefRoot - MinGetRoot)) {
             return true;
         }
     }
