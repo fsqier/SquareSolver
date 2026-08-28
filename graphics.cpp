@@ -1,6 +1,7 @@
 #include "graphics.h"
 #include <TXlib.h>
 #include <stdio.h>
+#include <windows.h>
 
 void SetWindow() {
 
@@ -45,9 +46,10 @@ double OnWindow(double num, double center) {
 
 void ChooseColor(double a, double b, double c) {
 
-    SlowPrint("Напиши 3 числа: ");
+    SlowPrint("Write 3 nums: ");
     int r = 0, g = 0, bl = 0;
     scanf("%d %d %d", &r, &g, &bl);
+
     txSetColor(RGB(r, g, bl));
 
     DrawParabola(a, b, c);
@@ -62,15 +64,16 @@ void DrawParabola(double a, double b, double c) {
     double min_x = -CENTER_X / SCALE;
     double max_x = CENTER_X / SCALE;
 
-    for (double x = -min_x; x < max_x; x += step) {
+    for (double x = min_x; x < max_x; x += step) {
         double y = a * x * x + b * x + c;
-        if (OnWindow(y, CENTER_Y) < 0.0 or OnWindow(y, CENTER_Y) > 600.0) {
+        /* if (OnWindow(y, CENTER_Y) < 0.0 or OnWindow(y, CENTER_Y) > 600.0) {
             continue;
-        } else if (isnan(prevx)) {
+         } else*/ if (isnan(prevx)) {
             prevx = x;
             prevy = y;
             continue;
         }
+
         txLine(OnWindow(prevx, CENTER_X), OnWindow(-prevy, CENTER_Y),
         OnWindow(x, CENTER_X), OnWindow(-y, CENTER_Y));
         prevx = x;

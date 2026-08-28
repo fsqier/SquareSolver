@@ -9,9 +9,9 @@
 
 const double SIZE_X = 600.0;
 const double SIZE_Y = 600.0;
-const double SCALE = 20.0;
 const double CENTER_X = SIZE_X / 2.0;
 const double CENTER_Y = SIZE_Y / 2.0;
+const double SCALE = 20.0;
 
 
 /*!
