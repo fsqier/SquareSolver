@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-//вывод решений
+
  void OutputSolves(int CntRoots, double x1, double x2) {
 
     printf("Количество корней: ");
@@ -28,14 +28,14 @@
     }
  }
 
-//проверяет, нужно ли решить ещё уравнение
+
 int NeedContinue() {
 
     printf("Продолжить?(yes/no) ");
     return YesOrNo();
 }
 
-//проверяет, ввод кодового слова
+
  int CheckInput(char* CodeWord, int WrongSymb) {
 
     if ((!strcmp(CodeWord, YES) || !strcmp(CodeWord, NO)) && !WrongSymb) {
@@ -45,7 +45,7 @@ int NeedContinue() {
     return false;
  }
 
-//ввод коэффициентов и проверка корректности
+
 int InputCoef(double* a, double* b, double* c) {
 
     printf("Введите коэффициенты:");
@@ -61,8 +61,7 @@ int InputCoef(double* a, double* b, double* c) {
     return true;
 }
 
-//чистка буффера ввода и подсчёт лишних символов
-//дает знать, есть ли лишние символы
+
 int ClearBuf() {
 
     int cnt_wrong_symb = 0;
@@ -83,7 +82,7 @@ int NeedTest() {
     return YesOrNo();
 }
 
-//ввели yes или no
+
 int YesOrNo() {
 
     const int code_word_len = 4;

@@ -1,16 +1,26 @@
 #include <TXLib.h>
 #include <stdio.h>
 
-#include "test_program.h"
 #include "solver.h"
+#include "solver.cpp"
+#include "test_program.h"
+#include "test_program.cpp"
 #include "in_out.h"
+#include "in_out.cpp"
 
 
 int main() {
 
+    txCreateWindow (800, 800);
+    txSetFillColor (TX_WHITE);
+    txClear ();
+    txClearConsole();
+
     if (NeedTest()) {
         RunAllTests();
     }
+
+    txClearConsole();
 
     while (NeedContinue()) {
 
@@ -27,4 +37,5 @@ int main() {
 
     return 0;
 }
+
 

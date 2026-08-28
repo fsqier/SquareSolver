@@ -6,7 +6,7 @@
 #include <math.h>
 #include <assert.h>
 
-//тестирование программки
+
 void RunAllTests() {
 
     int cnt_correct_test = 0,  cnt_all_test = 0;
@@ -38,7 +38,7 @@ void CntTest (double a, double b, double c, int CntRoot,
     *cnt_correct_test += CorrectTest(a, b, c, CntRoot, x1, x2);
 }
 
-//создает объект типа TestValRef
+
 int CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2) {
 
     TestValRef test = {
@@ -52,7 +52,7 @@ int CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2
     return RunOneTest(test);
 }
 
-//со структуркой
+
 int RunOneTest(TestValRef test) {
 
     double x1 = NAN, x2 = NAN;
@@ -71,7 +71,7 @@ int RunOneTest(TestValRef test) {
     return false;
 }
 
-//правильно ли посчитала программа корни
+
 int CorrectAns(TestValRef test, int CntRoots, double x1, double x2) {
 
     if (CntRoots != test.CntRoots) {

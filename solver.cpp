@@ -5,7 +5,7 @@
 #include <assert.h>
 
 
-//возвращает количество решений
+
 int SquareSolver(double a, double b, double c, double* x1, double* x2) {
 
     assert(x1 != NULL);
@@ -22,7 +22,7 @@ int SquareSolver(double a, double b, double c, double* x1, double* x2) {
     return SquareEq(a, b, c, x1, x2);
  }
 
-//решение квадратного уравнения при a != 0
+
 int SquareEq(double a, double b, double c, double* x1, double *x2) {
 
     if (IsZero(b)) {
@@ -54,7 +54,7 @@ int SquareEq(double a, double b, double c, double* x1, double *x2) {
     return TWO_ROOTS;
  }
 
- //решение линейных уравнений
+
  int LineEq(double b, double c, double* x1) {
 
     if (IsZero(b)) {
@@ -68,7 +68,7 @@ int SquareEq(double a, double b, double c, double* x1, double *x2) {
     return ONE_ROOT;
  }
 
- //сравнение double с 0
+
  int IsZero(double num) {
 
     const double eps = 1e-2;
