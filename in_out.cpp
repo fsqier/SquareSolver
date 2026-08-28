@@ -3,18 +3,27 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <windows.h>
+
+void SlowPrint(const char* text) {
+
+    for (unsigned int i = 0; i < strlen(text); ++i) {
+        Sleep(50);
+        printf("%c", text[i]);
+    }
+}
 
 
  void OutputSolves(int CntRoots, double x1, double x2) {
 
-    printf("Количество корней: ");
+    SlowPrint("Количество корней: ");
 
     switch(CntRoots) {
         case INF_ROOTS:
-            printf("Бесконечно много\n");
+            SlowPrint("Бесконечно много\n");
             break;
         case NO_ROOTS:
-            printf("0\n");
+            SlowPrint("0\n");
             break;
         case ONE_ROOT:
             printf("1\nx: %lg\n", x1);
@@ -23,7 +32,7 @@
             printf("2\nx1: %lg, x2: %lg\n", x1, x2);
             break;
         default:
-            printf("Корней почему-то больше двух и меньше INF\n");
+            SlowPrint("Корней почему-то больше двух и меньше INF\n");
             break;
     }
  }
@@ -31,7 +40,7 @@
 
 int NeedContinue() {
 
-    printf("Продолжить?(yes/no) ");
+    SlowPrint("Продолжить?(yes/no) ");
     return YesOrNo();
 }
 
@@ -48,11 +57,11 @@ int NeedContinue() {
 
 int InputCoef(double* a, double* b, double* c) {
 
-    printf("Введите коэффициенты:");
-    int correct_coefs = scanf("%lg %lg %lg", a, b, c);
-    int cnt_wrong_symb = ClearBuf();
+    SlowPrint("Введите коэффициенты:");
+    int CorrectCoefs = scanf("%lg %lg %lg", a, b, c);
+    int CntWrongSymb = ClearBuf();
 
-    if (correct_coefs != ALL_CORRECT_COEFS || cnt_wrong_symb > 0) {
+    if (CorrectCoefs != ALL_CORRECT_COEFS || CntWrongSymb > 0) {
         return false;
     }
 
@@ -64,21 +73,21 @@ int InputCoef(double* a, double* b, double* c) {
 
 int ClearBuf() {
 
-    int cnt_wrong_symb = 0;
+    int CntWrongSymb = 0;
     int ch = getchar();
     while (ch != '\n') {
         if (ch != ' ') {
-            ++cnt_wrong_symb;
+            ++CntWrongSymb;
         }
         ch = getchar();
     }
 
-    return (cnt_wrong_symb > 0);
+    return (CntWrongSymb > 0);
  }
 
 int NeedTest() {
 
-    printf("Нужно тестирование?(yes/no) ");
+    SlowPrint("Нужно тестирование?(yes/no) ");
     return YesOrNo();
 }
 
@@ -91,7 +100,7 @@ int YesOrNo() {
     scanf("%3s", CodeWord);
 
     while (!CheckInput(CodeWord, ClearBuf())) {
-        printf("yes or no ;) ");
+        SlowPrint("yes or no ;) ");
         scanf("%3s", CodeWord);
     }
 
