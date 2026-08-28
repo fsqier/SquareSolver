@@ -6,6 +6,10 @@
 #ifndef TEST_PROGRAM_H
 #define TEST_PROGRAM_H
 
+/*!
+@brief Структура для тестирования программы
+*/
+
 struct TestValRef {
     double a, b, c;
     int CntRoots;
