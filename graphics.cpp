@@ -66,9 +66,7 @@ void DrawParabola(double a, double b, double c) {
 
     for (double x = min_x; x < max_x; x += step) {
         double y = a * x * x + b * x + c;
-        /* if (OnWindow(y, CENTER_Y) < 0.0 or OnWindow(y, CENTER_Y) > 600.0) {
-            continue;
-         } else*/ if (isnan(prevx)) {
+        if (isnan(prevx)) {
             prevx = x;
             prevy = y;
             continue;
