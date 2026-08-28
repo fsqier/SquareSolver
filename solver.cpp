@@ -25,20 +25,6 @@ int SquareSolver(double a, double b, double c, double* x1, double* x2) {
 
 int SquareEq(double a, double b, double c, double* x1, double *x2) {
 
-    if (IsZero(b)) {
-        if (-c/a >= 0) {
-            *x1 = sqrt(-c/a);
-            return ONE_ROOT;
-        }
-        return NO_ROOTS;
-    }
-
-    if (IsZero(c)) {
-        *x1 = 0;
-        *x2 = -b/a;
-        return TWO_ROOTS;
-    }
-
     double d = DISCR(a, b, c);
 
     if (d < 0) {
