@@ -38,8 +38,6 @@ int main() {
         ChooseColor(a, b, c);
 
         OutputSolves(CntRoots, x1, x2);
-
-
     }
 
     return 0;

@@ -7,8 +7,10 @@
 
 void SlowPrint(const char* text) {
 
+    const int TimeToSleep = 50;
+
     for (unsigned int i = 0; i < strlen(text); ++i) {
-        Sleep(50);
+        Sleep(TimeToSleep);
         printf("%c", text[i]);
     }
 }
