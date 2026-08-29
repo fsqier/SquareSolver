@@ -1125,6 +1125,7 @@ FILE_PATTERNS          = *.c \
                          *.m \
                          *.markdown \
                          *.mm \
+                         *.md \
                          *.dox \
                          *.py \
                          *.pyw \
