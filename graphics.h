@@ -18,13 +18,13 @@ const double SCALE = 20.0;
 @brief Настраивает окно
 */
 
-void   SetWindow    ();
+void SetWindow ();
 
 /*!
 @brief Рисует оси координат
 */
 
-void   DrawAxes     ();
+void DrawAxes ();
 
 /*!
 @brief Рисует график функции по уравнению
@@ -34,7 +34,7 @@ void   DrawAxes     ();
 @param c коэффициент c
 */
 
-void   DrawParabola (double a, double b, double c);
+void DrawParabola (double a, double b, double c);
 
 /*!
 @brief Переводит координаты математические в "оконные"
@@ -45,7 +45,7 @@ void   DrawParabola (double a, double b, double c);
 @return координату получившуюся
 */
 
-double OnWindow     (double num, double size);
+double OnWindow (double num, double size);
 
 /*!
 @brief Спрашивает у пользователя числа для цвета графика
@@ -56,7 +56,7 @@ double OnWindow     (double num, double size);
 
 */
 
-void   ChooseColor  (double a, double b, double c);
+void ChooseColor (double a, double b, double c);
 
 
 #endif

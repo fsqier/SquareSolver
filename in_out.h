@@ -13,8 +13,7 @@
 @param text Выводимый текст
 */
 
-void SlowPrint(const char* text);
-
+void SlowPrint (const char* text);
 /*!
 @brief Выводит количество решений уравнения и, при необходимости, корни
 
@@ -23,7 +22,7 @@ void SlowPrint(const char* text);
 @param x2 Второй корень
 */
 
-void   OutputSolves(int CntRoots, double x1, double x2);
+void OutputSolves (int CntRoots, double x1, double x2);
 
 /*!
 @brief Спрашивает у пользователя, нужно ли ему еще раз решить квадратку
@@ -31,7 +30,7 @@ void   OutputSolves(int CntRoots, double x1, double x2);
 @return Если нужно решить еще раз -- true, иначе -- false
 */
 
-int    NeedContinue();
+int NeedContinue ();
 
 /*!
 @brief Проверяет ввод кодового слова для продолжения работы с программой\
@@ -42,7 +41,7 @@ int    NeedContinue();
 @return Если введено yes или no -- true, иначе -- false
 */
 
-int    CheckInput  (char* CodeWord, int CntWrongSymb);\
+int CheckInput (char* CodeWord, int CntWrongSymb);\
 
 /*!
 @brief Проверяет ввод коэффициентов
@@ -54,7 +53,7 @@ int    CheckInput  (char* CodeWord, int CntWrongSymb);\
 @return Если коэффициенты введены верно -- true, иначе -- false
 */
 
-int    InputCoef   (double* a, double* b, double* c);
+int InputCoef (double* a, double* b, double* c);
 
 /*!
 @brief Очищает буффер ввода
@@ -62,7 +61,7 @@ int    InputCoef   (double* a, double* b, double* c);
 @ return Количество "мусорных" символов, оставшихся в буффере
 */
 
-int    ClearBuf    ();
+int ClearBuf ();
 
 /*!
 @brief Спрашивает у пользователя, нужно ли провести тестирование программы
@@ -70,7 +69,7 @@ int    ClearBuf    ();
 @return Если нужно тестирование -- true, иначе -- false
 */
 
-int    NeedTest    ();
+int NeedTest ();
 
 /*!
 @brief Определяет, введено ли слово yes(программа продолжит выполнение) или no
@@ -78,7 +77,7 @@ int    NeedTest    ();
 @return Если введено yes -- true, иначе -- false
 */
 
-int    YesOrNo     ();
+int YesOrNo ();
 
 #define YES "yes"
 #define NO "no"

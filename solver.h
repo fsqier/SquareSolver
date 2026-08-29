@@ -32,7 +32,7 @@ enum cnt_roots_t {
 @note Изменяет значения x1 и x2
 */
 
-int    SquareSolver(double a, double b, double c, double* x1, double* x2);
+int SquareSolver (double a, double b, double c, double* x1, double* x2);
 
 /*!
 @brief Решает квадратное уравнение, где a != 0
@@ -48,7 +48,7 @@ int    SquareSolver(double a, double b, double c, double* x1, double* x2);
 @note Изменяет значения x1 и x2
 */
 
-int    SquareEq    (double a, double b, double c, double* x1, double* x2);
+int SquareEq (double a, double b, double c, double* x1, double* x2);
 
 /*!
 @brief Решает квадратное уравнение, где a == 0
@@ -62,7 +62,7 @@ int    SquareEq    (double a, double b, double c, double* x1, double* x2);
 @note Изменяет значения x1
 */
 
-int    LineEq      (double b, double c, double* x1);
+int LineEq (double b, double c, double* x1);
 
 /*!
 @brief Сравнивает число типа double с 0
@@ -72,7 +72,7 @@ int    LineEq      (double b, double c, double* x1);
 @return Если число равно 0 с погрешностью eps -- true, иначе -- false
 */
 
-int    IsZero      (double num);
+int IsZero (double num);
 
 /*!
 @brief Считает дискриминант

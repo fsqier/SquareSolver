@@ -21,7 +21,7 @@ struct TestValRef {
 @brief Запускает тестирование из файла
 */
 
-void   RunAllTests ();
+void RunAllTests ();
 
 /*!
 @brief Считает количество тестов
@@ -36,8 +36,8 @@ void   RunAllTests ();
 @param cnt_correct_test Указатель на успешное количество тестов
 */
 
-void   CntTest     (double a, double b, double c, int CntRoot,
-                    double x1, double x2, int* cnt_all_test, int* cnt_correct_test);
+void CntTest (double a, double b, double c, int CntRoot,
+                double x1, double x2, int* cnt_all_test, int* cnt_correct_test);
 
 /*!
 @brief Создает объект типа TestValRef
@@ -52,7 +52,7 @@ void   CntTest     (double a, double b, double c, int CntRoot,
 @return Если тест пройден успешно -- true, иначе -- false
 */
 
-int    CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2);
+int CorrectTest (double a, double b, double c, int CntRoot, double x1, double x2);
 
 /*!
 @brief Запускает тест и выводит получившийся результат
@@ -62,7 +62,7 @@ int    CorrectTest (double a, double b, double c, int CntRoot, double x1, double
 @return Если тест пройден успешно -- true, иначе -- false
 */
 
-int    RunOneTest  (TestValRef test);
+int RunOneTest (TestValRef test);
 
 /*!
 @brief Проверяет, успешно ли пройден тест
@@ -75,6 +75,6 @@ int    RunOneTest  (TestValRef test);
 @return Если тест пройден успешно -- true, иначе -- false
 */
 
-int    CorrectAns  (TestValRef test, int CntRoots, double x1, double x2);
+int CorrectAns (TestValRef test, int CntRoots, double x1, double x2);
 
 #endif
