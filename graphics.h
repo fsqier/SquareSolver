@@ -9,10 +9,21 @@
 
 const double SIZE_X = 600.0;
 const double SIZE_Y = 600.0;
-const double CENTER_X = SIZE_X / 2.0;
-const double CENTER_Y = SIZE_Y / 2.0;
-const double SCALE = 20.0;
+double CENTER_X = SIZE_X / 2.0;
+double CENTER_Y = SIZE_Y / 2.0;
+double SCALE = 20.0;
+double OFFSET_X = 0, OFFSET_Y = 0;
 
+
+/*!
+@brief Работа с окном
+
+@param[in] a коэффициент a
+@param[in] b коэффициент b
+@param[in] c коэффициент c
+*/
+
+void DrawGraph(double a, double b, double c);
 
 /*!
 @brief Настраивает окно

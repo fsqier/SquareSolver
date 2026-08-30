@@ -3,6 +3,43 @@
 #include <stdio.h>
 #include <windows.h>
 
+void DrawGraph(double a, double b, double c) {
+
+    txBegin();
+
+    while(!GetAsyncKeyState (VK_ESCAPE)) {
+        txSetFillColor(TX_WHITE);
+        txClear();
+        DrawAxes();
+
+        DrawParabola(a, b, c);
+
+        if (GetAsyncKeyState (VK_UP)) {
+            OFFSET_Y -= SCALE;    
+        }
+        if (GetAsyncKeyState (VK_DOWN) and SCALE > 5) {
+            OFFSET_Y += SCALE;
+        }
+        if (GetAsyncKeyState (VK_LEFT) and SCALE > 5) {
+            OFFSET_X -= SCALE;
+        }
+        if (GetAsyncKeyState (VK_RIGHT) and SCALE > 5) {
+            OFFSET_X += SCALE;
+        }
+        CENTER_X = SIZE_X / 2 + OFFSET_X;
+        CENTER_Y = SIZE_Y / 2 + OFFSET_Y;
+
+
+        txSleep(50);
+    }
+
+    txEnd();
+    SCALE = 20.0;
+    txSetFillColor(TX_WHITE);
+    txClear();
+    DrawAxes();
+}
+
 void SetWindow() {
 
     txCreateWindow(SIZE_X, SIZE_Y);
@@ -30,12 +67,12 @@ void DrawAxes() {
 
     // деления на Ох
     for (double x = SCALE; x < SIZE_X; x += SCALE) {
-        txLine(x, 290, x, 310);
+        txLine(x, CENTER_Y - 10, x, CENTER_Y + 10);
     }
 
     // деления на Оу
     for (double y = SCALE; y < SIZE_Y; y += SCALE) {
-        txLine(290, y, 310, y);
+        txLine(CENTER_X - 10, y, CENTER_X + 10, y);
     }
 }
 
@@ -61,8 +98,8 @@ void DrawParabola(double a, double b, double c) {
     double step = 0.01;
     double prevx = NAN, prevy = NAN;
 
-    double min_x = -CENTER_X / SCALE;
-    double max_x =  CENTER_X / SCALE;
+    double min_x = -100.0;
+    double max_x =  100.0;
 
     for (double x = min_x; x < max_x; x += step) {
         double y = a * x * x + b * x + c;
