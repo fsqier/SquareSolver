@@ -35,9 +35,12 @@ int main() {
         double x1 = NAN, x2 = NAN;
         int CntRoots = SquareSolver(a, b, c, &x1, &x2);
 
-        ChooseColor(a, b, c);
-
         OutputSolves(CntRoots, x1, x2);
+
+        ChooseColor(a, b, c);
+        SlowPrint("Нажмите Esc чтоб продолжить\n");
+        DrawGraph(a, b, c);
+
     }
 
     return 0;
